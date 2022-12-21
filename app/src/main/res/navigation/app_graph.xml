@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_graph"
+    app:startDestination="@id/locationsFragment">
+    <fragment android:id="@+id/locationsFragment"
+        android:name="com.isolina.demo.ui.fragments.publications.PublicationsFragment"
+        tools:layout="@layout/fragment_publication">
+        <action android:id="@+id/action_locations_to_issues"
+            app:destination="@id/issuesFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/issuesFragment"
+        android:name="com.isolina.demo.ui.fragments.issues.IssuesFragment"
+        tools:layout="@layout/fragment_issues">
+        <argument
+            android:name="IdLocation"
+            app:argType="string" />
+    </fragment>
+</navigation>
